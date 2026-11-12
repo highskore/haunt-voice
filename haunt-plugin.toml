@@ -1,0 +1,27 @@
+[plugin]
+id = "dev.haunt.voice"
+name = "Voice"
+description = "Haunt says out loud which agent needs you while you're away"
+version = "0.1.0"
+api = "0.5"
+entry = "target/wasm32-wasip2/release/haunt_plugin.wasm"
+license = "MIT"
+
+[capabilities]
+# Speaks up only while you're away, by default.
+away = true
+# The waiting command's first words, read aloud.
+event_details = true
+events = ["agent.session-start", "agent.prompt", "agent.subagent", "agent.tool", "agent.permission-request", "agent.question", "agent.stop", "agent.unknown"]
+speech = true
+# Catches up on an announcement refused for coming too soon after the last.
+timer = true
+
+[contributes]
+commands = [{ id = "waiting", title = "Who's waiting?" }]
+
+[settings]
+announce = { type = "bool", default = true, description = "Say \"api needs you: git push\" when an agent starts waiting" }
+only_when_away = { type = "bool", default = true, description = "Only while you're away from the screen" }
+read_commands = { type = "bool", default = true, description = "Read the first words of the waiting command" }
+unverified = { type = "bool", default = false, description = "Also follow events without the tab's nonce, which anything in the terminal can forge" }
