@@ -1,6 +1,17 @@
+<div align="center">
+
+<img src="docs/icon.png" width="96" alt="">
+
 # Voice
 
-Haunt says out loud which agent needs you while you're away.
+**Haunt says out loud which agent needs you while you're away.**
+
+[![Haunt plugin](https://img.shields.io/badge/Haunt-plugin-D97757)](https://github.com/highskore/haunt-hackathon)
+![Plugin API 0.5](https://img.shields.io/badge/plugin%20API-0.5-111)
+![WASM component](https://img.shields.io/badge/WASM-component-654ff0?logo=webassembly&logoColor=white)
+![MIT licence](https://img.shields.io/badge/licence-MIT-6b7280)
+
+</div>
 
 When an agent starts waiting on you while you're away from the screen (locked, asleep or idle), Haunt says so in the system voice: "api needs you: git push origin feat/auth". Run **Who's waiting?** from the ⌘K palette to hear everyone who waits, longest first: "api, for 1 minute: git push. web, for under a minute". Speech stops when you come back.
 
